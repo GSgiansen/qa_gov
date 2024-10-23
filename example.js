@@ -20,10 +20,12 @@ const path = require('path');
   await page.click('label[for="gender-radio-1"]');
 
 
-
-
   await page.fill('.subjects-auto-complete__input input', 'Maths');
   await page.locator('.subjects-auto-complete__option >> text=Maths').click();
+
+  await page.getByText('Sports').click();
+  await page.getByText('Music').click();
+  
 
 
   await page.setInputFiles('#uploadPicture', path.join(__dirname, 'dog.png'));
